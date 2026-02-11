@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Favorite Human 😌</title>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#d8cbb8;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.card{
+  background:#f8c8dc;
+  width:600px;
+  height:350px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+  padding:30px;
+  text-align:center;
+  position:relative;
+  transition:0.5s;
+}
+
+h1{
+  font-family:'Patrick Hand',cursive;
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+p{
+  font-size:16px;
+  line-height:1.5;
+}
+
+.teddy{
+  font-size:60px;
+}
+
+button{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:#ff4f7b;
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+  <div class="teddy">🧸</div>
+  <h1>Hey you 😌 don’t scroll</h1>
+  <p>I made something because texting wasn't enough.</p>
+  <button onclick="nextSlide()">next ➜</button>
+</div>
+
+<script>
+
+let slide = 1;
+
+function nextSlide(){
+  let card = document.getElementById("card");
+
+  if(slide==1){
+    card.innerHTML = `
+    <div class="teddy">🌸</div>
+    <h1>Some virtual flowers for you</h1>
+    <p>Because even after fights, you're still my favorite person to annoy.</p>
+    <button onclick="nextSlide()">next ➜</button>
+    `;
+    slide++;
+  }
+
+  else if(slide==2){
+    card.innerHTML = `
+    <div class="teddy">🥺</div>
+    <h1>Why fight? Please!!</h1>
+    <p>Distance looks bad on us. We’re supposed to survive college together remember?</p>
+    <button onclick="nextSlide()">next ➜</button>
+    `;
+    slide++;
+  }
+
+  else if(slide==3){
+    card.innerHTML = `
+    <div class="teddy">🎁</div>
+    <h1>I have a deal for you</h1>
+    <p>No more silly fights. Permanent bestfriend contract. No cancellation policy.</p>
+    <button onclick="finalSlide()">open gift 🎀</button>
+    `;
+  }
+}
+
+function finalSlide(){
+  let card = document.getElementById("card");
+  card.innerHTML = `
+  <div class="teddy">💛</div>
+  <h1>Bestfriend Forever?</h1>
+  <p>College bhi mere saath hi karna hai. Non-negotiable 😌</p>
+  <button onclick="alert('Correct answer 😌 Contract renewed!')">Yes Obviously</button>
+  `;
+}
+
+</script>
+
+</body>
+</html>
